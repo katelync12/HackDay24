@@ -6,6 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 def signup_view(request):
@@ -16,12 +17,13 @@ def signup_view(request):
         password2 = request.POST.get('password2')
         if password1 != password2:
             messages.error(request, "Passwords do not match")
-            return render(request, 'signup.html', {'error': 'Passwords do not match'})
+            return render(request, 'signup.html')
         if User.objects.filter(username=username).exists():
-            return render(request, 'signup.html', {'error': 'Username is already taken'})
+            messages.error(request, "Username is already taken")
+            return render(request, 'signup.html')
         user = User.objects.create_user(username=username, email=email, password=password1)
         login(request, user)
-        return redirect('home')
+        return redirect('questions')
     return render(request, 'signup.html')
 
 def login_view(request):
@@ -43,3 +45,7 @@ def home_view(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+@login_required
+def question_view(request):
+    return render(request, "questions.html")

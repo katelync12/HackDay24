@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<form id="questionnaireForm" method="post">
+    {% csrf_token %}
+    <h2>Questionnaire</h2>
+    <label for="textbox">What is your name?</label><br>
+    <input type="text" id="textbox" name="name" required><br><br>
+
+    <label for="dropdown">What state are you based in?</label><br>
+    <select id="dropdown" name="state" required>
+        <option value="" disabled selected>Select state</option>
+        <option value="california">California</option>
+        <option value="minnesota">Minnesota</option>
+        <option value="other">Other</option>
+    </select><br><br>
+
+    <label for="adoption_dropdown">Are you adopting?</label><br>
+    <select id="adoption_dropdown" name="adoption" required onchange="toggleAdoptionMoney()">
+        <option value="" disabled selected>Select option</option>
+        <option value="yes_adoption">Yes</option>
+        <option value="no_adoption">No</option>
+    </select><br><br>
+
+    <div id="adoption_money_div" style="display: none;">
+        <label for="adoption_money_dropdown">Would you like financial reimbursement for the adoption?</label><br>
+        <select id="adoption_money_dropdown" name="adoption_money" required>
+            <option value="" disabled selected>Select option</option>
+            <option value="yes_adoption_money">Yes</option>
+            <option value="no_adoption_money">No</option>
+        </select><br><br>
+    </div>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<script>
+    function submitForm() {
+        // Check if all required fields are filled
+        if (document.getElementById("textbox").value === "" || document.getElementById("dropdown").value === "") {
+            alert("All fields are not filled out");
+        } else {
+            // If all fields are filled, redirect to the home page
+            window.location.href = "{% url 'home' %}";
+        }
+    }
+    function toggleAdoptionMoney() {
+        var adoptionDropdown = document.getElementById("adoption_dropdown");
+        var adoptionMoneyDiv = document.getElementById("adoption_money_div");
+
+        if (adoptionDropdown.value === "yes_adoption") {
+            adoptionMoneyDiv.style.display = "block";
+        } else {
+            adoptionMoneyDiv.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
+
+{% block messages %}
+  {% if messages %}
+    <script>
+      // JavaScript to show alert box with messages
+      window.onload = function() {
+        alert("{% for message in messages %}{{ message }}\n{% endfor %}");
+      };
+    </script>
+  {% endif %}
+{% endblock %}
