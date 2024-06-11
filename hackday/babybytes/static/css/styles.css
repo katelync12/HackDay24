@@ -5,7 +5,7 @@
     justify-content: center;
     height: 500px;
     width: 700px;
-    background-color: #ffffff;
+    background-color: #ffff;
     align-items: center;
     border-radius: 10%;
     
@@ -25,9 +25,30 @@
     justify-content: center;
     align-items: center;
     text-align: center; /* Center text */
+    top: 50%;
+    transform: translateY(50%); /* Center the container vertically */
     width: 30%;
     height: 50%;
     margin: 0 auto; /*Center container horizontally */
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center text */
+  top: 50%;
+  transform: translateY(50%); /* Center the container vertically */
+  width: 30%;
+  height: 80%;
+  margin: 0 auto; /*Center container horizontally */
+  border-radius: 25px;
+  background-color: #ffff
+}
+
+.body-login {
+  background-color: #318DC1
 }
 
 body, h1, h2, h3, h4, h5, h6 {
