@@ -48,4 +48,27 @@ def logout_view(request):
 
 @login_required
 def question_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        state = request.POST.get('state')
+        adoption = request.POST.get('adoption')
+        adoption_money = request.POST.get('adoption_money', 'N/A')  # Default to 'N/A' if not provided
+        csection = request.POST.get('csection')
+
+        if not all([name, state, adoption, csection]):
+            messages.error(request, "All fields are required.")
+            return render(request, "questions.html")
+
+        user = User(
+            username=request.user.username,
+            name=name,
+            state=state,
+            adoption=adoption,
+            reimbursement=adoption_money,
+            csection=csection
+        )
+        user.save()
+
+        return redirect('home')
+
     return render(request, "questions.html")
