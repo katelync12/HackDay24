@@ -5,6 +5,12 @@
 .signup-link {
     margin-top: 10px;
 }
+ 
+p.main {
+    color: #318DC1;
+    font-size: 40 px;
+    font-family: 'inter';
+}
 .alert {
     position: fixed;
     top: 0;
@@ -28,11 +34,7 @@ h2{
     src: url('../../../../Inter-4.0.3/InterVariable.ttf')
 }
 
-p.main {
-    color: #318DC1;
-    font-size: 40 px;
-    font-family: 'inter';
-}
+
 
 p.welcome {
     color:#585858; 
