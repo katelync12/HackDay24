@@ -37,22 +37,25 @@ p.main {
 p.welcome {
     color:#585858; 
     font-size: 36px;
+    font-family: 'inter';
 }
 p.bold {
     color:#585858;
     font-weight:bold;
     font-size: 36px;
-    font-display: inter;
+    font-family: 'inter';
 }
 
 p.body {
     color: black;
     font-size: 30px;
+    font-family: 'inter';
 }
 
 p.small {
     color: #585858;
     font-size: 16px;
+    font-family: 'inter';
 }
 p.links {
     color:#318DC1;
