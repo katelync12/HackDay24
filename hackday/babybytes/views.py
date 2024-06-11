@@ -41,6 +41,9 @@ def login_view(request):
 def about_view(request):
     return render(request, 'about.html')
 
+def message_view(request):
+    return render(request, 'message.html')
+
 @login_required
 def account_view(request):
     return render(request, 'account.html')
