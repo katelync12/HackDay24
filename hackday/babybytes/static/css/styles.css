@@ -5,11 +5,22 @@
 .signup-link {
     margin-top: 10px;
 }
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
  
 h1 {
+<<<<<<< Updated upstream
     color: #585858;
     font-size: 36 px;
     font-family: 'inter';
+=======
+    color: #318DC1;
+    font-size: 40 px;
+    font-family: 'Roboto';
+>>>>>>> Stashed changes
 }
 .alert {
     position: fixed;
@@ -27,10 +38,11 @@ h1 {
 h2{
     color: #318DC1;
     font-size: 40 px;
+    font-family: 'Roboto';
 }
 
 @font-face {
-    font-family: 'inter';
+    font-family: 'Roboto';
     src: url('../../../../Inter-4.0.3/InterVariable.ttf')
 }
 
@@ -39,7 +51,7 @@ h2{
 p.welcome {
     color:#585858; 
     font-size: 36px;
-    font-family: 'inter';
+    font-family: 'Roboto';
 }
 p.bold {
     color:#585858;
@@ -51,13 +63,13 @@ p.bold {
 p.body {
     color: black;
     font-size: 30px;
-    font-family: 'inter';
+    font-family: 'Roboto';
 }
 
 p.small {
     color: #585858;
     font-size: 16px;
-    font-family: 'inter';
+    font-family: 'Roboto';
 }
 p.links {
     color:#318DC1;
@@ -66,7 +78,7 @@ p.links {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'inter';
+    font-family: 'Roboto';
   }
 
 .nav-bar {
