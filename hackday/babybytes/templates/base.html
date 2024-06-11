@@ -13,10 +13,18 @@
         </label>
         <label class="logo">GFG</label>
         <ul>
-            <li><a class="active" href="#">HTML</a></li>
-            <li><a href="#">Javascript</a></li>
-            <li><a href="#">ReactJS</a></li>
-            <li><a href="#">NodeJS</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="/home">Home</a></li>
+            {% else %}
+                <li><a href="/">Home</a></li>
+            {% endif %}
+            <li><a href="/about">About</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="/account">Account</a></li>
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+            {% endif %}
         </ul>
     </nav>
     
