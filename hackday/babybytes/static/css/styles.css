@@ -1,6 +1,10 @@
 .container {
     text-align: center;
     margin-top: 50px;
+    margin-left: 500px;
+    height: 500px;
+    width: 500px;
+    background-color: white;
 }
 .signup-link {
     margin-top: 10px;
@@ -10,9 +14,9 @@ body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
 }
 
- 
+
 h1 {
-    color: #318DC1;
+    color: #585858;
     font-size: 40 px;
     font-family: 'Roboto';
 }
@@ -27,6 +31,13 @@ h1 {
     text-align: center;
     display: none; /* Hide the alert initially */
     z-index: 1000; /* Ensure the alert is on top */
+}
+
+.box{
+  background-color: #ECECEC;
+  width: 100px;
+  height: 100px;
+  margin: 50px;
 }
 
 h2{
