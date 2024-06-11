@@ -37,13 +37,23 @@
         </select><br><br>
     </div>
 
+    <label for="csection_dropdown">Are you planning on having a c-section?</label><br>
+    <select id="csection_dropdown" name="csection" required>
+        <option value="" disabled selected>Select option</option>
+        <option value="yes_csection">Yes</option>
+        <option value="no_csection">No</option>
+    </select><br><br>
+
     <button type="button" onclick="submitForm()">Submit</button>
 </form>
 
 <script>
     function submitForm() {
         // Check if all required fields are filled
-        if (document.getElementById("textbox").value === "" || document.getElementById("dropdown").value === "") {
+        if (document.getElementById("textbox").value === "" || 
+            document.getElementById("dropdown").value === "" || 
+            document.getElementById("adoption_dropdown").value === "" || 
+            document.getElementById("csection_dropdown").value === "") {
             alert("All fields are not filled out");
         } else {
             // If all fields are filled, redirect to the home page
@@ -64,14 +74,3 @@
 
 </body>
 </html>
-
-{% block messages %}
-  {% if messages %}
-    <script>
-      // JavaScript to show alert box with messages
-      window.onload = function() {
-        alert("{% for message in messages %}{{ message }}\n{% endfor %}");
-      };
-    </script>
-  {% endif %}
-{% endblock %}
