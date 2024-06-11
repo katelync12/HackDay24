@@ -123,14 +123,6 @@ h2{
   border-color: #318DC1; /* Change border color on focus */
 }
 
-@font-face {
-    font-family: 'Roboto';
-    src: url('../../../../Inter-4.0.3/InterVariable.ttf')
-}
-
-
-
-
 p.welcome {
     color:#585858; 
     font-size: 36px;
@@ -250,3 +242,26 @@ body {
     }
   }
   
+
+  .messagebox {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.messagebox[type="text"] {
+    box-shadow: none;
+}
+
+.messagedesc {
+    text-align: left;
+}
+
+textarea.messagebox {
+    width: 35%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}

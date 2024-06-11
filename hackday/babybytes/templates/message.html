@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+    <div style="justify-content: center; align-items: center">
+        <div>
+            <h1>Leave a message for a parent</h1>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div style="justify-content: center; align-items: center">
+                <p>Username (State Farm alias)</p>
+                <input class="messagebox" type="text" name="username" style="width: 35%" required>
+                
+                <div style="display: flex; flex-direction: row; justify-content: center;">
+                    <div style="margin-right: 10px; width: 17.5%">
+                        <p class="messagedesc">Name</p>
+                        <input class="messagebox" type="text" name="sender" style="width: 100%" required>
+                    </div>
+                    <div style="margin-right: 10px; width: 17.5%">
+                        <p class="messagedesc">Role</p>
+                        <select id="dropdown" name="role" required style="width: 175px;" class="messagebox">
+                            <option value="" disabled selected>Select Role</option>
+                            <option value="manager">Manager</option>
+                            <option value="coworker">Co-Worker</option>
+                            <option value="hr">HR</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div>
+                    <p>Message</p>
+                    <textarea class="messagebox" name="message" rows="6" required></textarea>
+                </div>
+            </div>
+            <br>
+            <div style="display: flex; justify-content: center;">
+                <button type="back">Back</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        
+    </div>
+{% endblock %}

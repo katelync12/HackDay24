@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import Employee
+from .models import Employee, Messages
 
 def signup_view(request):
     if request.method == 'POST':
@@ -41,7 +41,24 @@ def login_view(request):
 def about_view(request):
     return render(request, 'about.html')
 
+def success_page_view(request):
+    return render(request, 'success_page.html')
+
 def message_view(request):
+    if request.method == 'POST':
+        username = str(request.POST.get('username'))
+        role = str(request.POST.get('role'))
+        sender = str(request.POST.get('sender'))
+        message = str(request.POST.get('message'))
+
+        if Employee.objects.filter(username=username).exists():
+            print("----Created============================")
+            Messages.objects.create(username=username, role=role, sender=sender, message=message)
+            return redirect('success_page')
+        else:
+            messages.error(request, "Error: the user alias does not exist")
+            return render(request, 'message.html')
+        
     return render(request, 'message.html')
 
 @login_required
