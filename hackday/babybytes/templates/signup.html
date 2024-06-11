@@ -1,16 +1,17 @@
-<!-- myapp/templates/login.html -->
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Login</title>
-</head>
+    <head>
+        <title>Sign Up</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    </head>
 <body>
     <div class="container">
-        <h2>Login</h2>
+        <h2>Sign Up</h2>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Login</button>
+            <button type="submit">Sign Up</button>
         </form>
         {% if messages %}
             <ul class="messages">
@@ -19,9 +20,6 @@
                 {% endfor %}
             </ul>
         {% endif %}
-        <div class="signup-link">
-            <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
-        </div>
     </div>
 </body>
 </html>
