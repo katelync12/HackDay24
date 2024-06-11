@@ -14,16 +14,16 @@
         <label class="logo">GFG</label>
         <ul>
             {% if user.is_authenticated %}
-                <li><a href="/home">Home</a></li>
+                <li><a class="{% if request.path == '/home/' %}active{% endif %}" href="/home">Home</a></li>
             {% else %}
-                <li><a href="/">Home</a></li>
+                <li><a class="{% if request.path == '/' %}active{% endif %}" href="/">Home</a></li>
             {% endif %}
-            <li><a href="/about">About</a></li>
+            <li><a class="{% if request.path == '/about/' %}active{% endif %}" href="/about">About</a></li>
             {% if user.is_authenticated %}
-                <li><a href="/account">Account</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a class="{% if request.path == '/account/' %}active{% endif %}" href="/account">Account</a></li>
+                <li><a class="{% if request.path == '/logout/' %}active{% endif %}" href="/logout">Logout</a></li>
             {% else %}
-                <li><a href="/login">Login</a></li>
+                <li><a class="{% if request.path == '/login/' %}active{% endif %}" href="/login">Login</a></li>
             {% endif %}
         </ul>
     </nav>

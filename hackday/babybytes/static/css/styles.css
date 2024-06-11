@@ -112,6 +112,12 @@ body {
   #check {
     display: none;
   }
+
+  .nav-bar ul li a.active {
+    color: #318DC1;
+    font-weight: bold;
+}
+
   
   @media (max-width: 768px) {
     .nav-bar .checkbtn {
