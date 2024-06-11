@@ -5,6 +5,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from .forms import SignUpForm
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
+
 
 def signup_view(request):
     if request.method == 'POST':
@@ -37,6 +40,10 @@ def login_view(request):
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
 
-
+@login_required
 def home_view(request):
     return render(request, 'home.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
