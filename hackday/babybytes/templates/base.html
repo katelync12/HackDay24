@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Website{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav class="nav-bar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">GFG</label>
+        <ul>
+            <li><a class="active" href="#">HTML</a></li>
+            <li><a href="#">Javascript</a></li>
+            <li><a href="#">ReactJS</a></li>
+            <li><a href="#">NodeJS</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% block messages %}
+      {% if messages %}
+        <script>
+          // JavaScript to show alert box with messages
+          window.onload = function() {
+            alert("{% for message in messages %}{{ message }}\n{% endfor %}");
+          };
+        </script>
+      {% endif %}
+    {% endblock %}
+</body>
+</html>

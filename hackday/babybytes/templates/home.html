@@ -1,43 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <nav class="nav-bar">
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <label class="logo">GFG</label>
-        <ul>
-            <li><a class="active" href="#">HTML</a></li>
-            <li><a href="#">Javascript</a></li>
-            <li><a href="#">ReactJS</a></li>
-            <li><a href="#">NodeJS</a></li>
-        </ul>
-    </nav>
-    
-    <div class="container">
-        <h1 class="main">Welcome to the Home Page</h1>
-        <p>Hello {{ request.user.username }}!</p>
-        <form method="post" action="{% url 'logout' %}">
-            {% csrf_token %}
-            <button type="submit" class="logout-button">Logout</button>
-        </form>
-    </div>
-</body>
-</html>
+{% extends 'base.html' %}
 
-{% block messages %}
-  {% if messages %}
-    <script>
-      // JavaScript to show alert box with messages
-      window.onload = function() {
-        alert("{% for message in messages %}{{ message }}\n{% endfor %}");
-      };
-    </script>
-  {% endif %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1 class="main">Welcome to the Home Page</h1>
+    <p>Hello {{ request.user.username }}!</p>
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
 {% endblock %}
