@@ -17,3 +17,44 @@
     display: none; /* Hide the alert initially */
     z-index: 1000; /* Ensure the alert is on top */
 }
+
+h2{
+    color: #318DC1;
+    font-size: 40 px;
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url('../../../../Inter-4.0.3/InterVariable.ttf')
+}
+
+p.main {
+    color: #318DC1;
+    font-size: 40 px;
+    font-family: 'inter';
+}
+
+p.welcome {
+    color:#585858; 
+    font-size: 36px;
+}
+p.bold {
+    color:#585858;
+    font-weight:bold;
+    font-size: 36px;
+    font-display: inter;
+}
+
+p.body {
+    color: black;
+    font-size: 30px;
+}
+
+p.small {
+    color: #585858;
+    font-size: 16px;
+}
+p.links {
+    color:#318DC1;
+    font-size: 16px;
+}
