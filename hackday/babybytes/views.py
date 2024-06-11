@@ -38,6 +38,13 @@ def login_view(request):
             messages.error(request, 'Invalid username or password.')
     return render(request, 'login.html')
 
+def about_view(request):
+    return render(request, 'about.html')
+
+@login_required
+def account_view(request):
+    return render(request, 'account.html')
+
 @login_required
 def home_view(request):
     return render(request, 'home.html')
