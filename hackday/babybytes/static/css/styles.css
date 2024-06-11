@@ -64,16 +64,17 @@ p.links {
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'inter';
   }
 
 .nav-bar {
-    background-color: green;
-    color: white;
+    color: #585858;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    font-size: 1.1em;
+    border-bottom: 2px solid #ECECEC;
   }
   
   .nav-bar .logo {
@@ -92,13 +93,13 @@ body {
   }
   
   .nav-bar ul li a {
-    color: white;
+    color: #585858;
     text-decoration: none;
     transition: color 0.3s;
   }
   
   .nav-bar ul li a:hover {
-    color: lightgreen;
+    color: #318DC1;
   }
   
   .nav-bar .checkbtn {
