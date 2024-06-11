@@ -1,0 +1,19 @@
+To run the server 
+1. Make sure you're in the folder hackday (if not, cd into it)
+2. python manage.py runserver
+
+How to get code from Github
+1. git fetch
+2. git pull
+If you get an error message about git stash or commit 
+3. git stash
+4. git pull 
+5. git stash apply 
+
+How to activate a virtual environment
+Windows
+1. python -m venv env
+2. .\env\Scripts\activate
+Mac
+1. python3 -m venv env
+2. source env/bin/activate
