@@ -3,5 +3,12 @@
 {% block title %}Message Success{% endblock %}
 
 {% block content %}
-    <h1>Message Sent Successfully</h1>
+    <div class="container-login">
+        <h1>Thanks, they will appreciate your message!</h1>
+        <br>
+        <div>
+            <button class="primary-button" onclick="location.href='/message'">Send another message</button>
+            <button class="secondary-button" onclick="location.href='/'">Go back to home page</button>
+        </div>
+    <div>
 {% endblock %}
