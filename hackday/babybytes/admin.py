@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import User, Messages
+from .models import Employee, Messages
 
-@admin.register(User)
-class UserAdmin(admin.ModelAdmin):
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('username', 'name', 'state', 'adoption', 'reimbursement', 'csection')
     search_fields = ('username', 'name', 'state')
 

@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class User(models.Model):
+class Employee(models.Model):
     username = models.CharField(max_length=255, primary_key=True)
     name = models.CharField(max_length=255, default='Unknown')
     state = models.CharField(max_length=255)
@@ -10,7 +10,7 @@ class User(models.Model):
     csection = models.CharField(max_length=255)
 
 class Messages(models.Model):
-    username = models.CharField(max_length=255)
+    username = models.CharField(max_length=255, primary_key=True)
     role = models.CharField(max_length=255)
     sender = models.CharField(max_length=255)
     message = models.TextField()

@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form id="questionnaireForm" method="post">
+<form id="questionnaireForm" method="POST" action="{% block action %}{% url 'questions' %}{% endblock %}" onsubmit="return submitForm()">
     {% csrf_token %}
     <h2>Questionnaire</h2>
     <label for="textbox">What is your name?</label><br>
@@ -16,35 +16,35 @@
     <label for="dropdown">What state are you based in?</label><br>
     <select id="dropdown" name="state" required>
         <option value="" disabled selected>Select state</option>
-        <option value="california">California</option>
-        <option value="minnesota">Minnesota</option>
-        <option value="other">Other</option>
+        <option value="California">California</option>
+        <option value="Minnesota">Minnesota</option>
+        <option value="Other">Other</option>
     </select><br><br>
 
     <label for="adoption_dropdown">Are you adopting?</label><br>
     <select id="adoption_dropdown" name="adoption" required onchange="toggleAdoptionMoney()">
         <option value="" disabled selected>Select option</option>
-        <option value="yes_adoption">Yes</option>
-        <option value="no_adoption">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select><br><br>
 
     <div id="adoption_money_div" style="display: none;">
         <label for="adoption_money_dropdown">Would you like financial reimbursement for the adoption?</label><br>
-        <select id="adoption_money_dropdown" name="adoption_money" required>
+        <select id="adoption_money_dropdown" name="adoption_money">
             <option value="" disabled selected>Select option</option>
-            <option value="yes_adoption_money">Yes</option>
-            <option value="no_adoption_money">No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
         </select><br><br>
     </div>
 
     <label for="csection_dropdown">Are you planning on having a c-section?</label><br>
     <select id="csection_dropdown" name="csection" required>
         <option value="" disabled selected>Select option</option>
-        <option value="yes_csection">Yes</option>
-        <option value="no_csection">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select><br><br>
 
-    <button type="button" onclick="submitForm()">Submit</button>
+    <button type="submit">Submit</button>
 </form>
 
 <script>
@@ -55,10 +55,10 @@
             document.getElementById("adoption_dropdown").value === "" || 
             document.getElementById("csection_dropdown").value === "") {
             alert("All fields are not filled out");
-        } else {
-            // If all fields are filled, redirect to the home page
-            window.location.href = "{% url 'home' %}";
+            return false; // Prevent form submission if fields are not filled
         }
+        // If all fields are filled, allow form submission
+        return true;
     }
     function toggleAdoptionMoney() {
         var adoptionDropdown = document.getElementById("adoption_dropdown");

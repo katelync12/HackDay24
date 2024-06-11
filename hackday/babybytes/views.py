@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
+from .models import Employee
 
 def signup_view(request):
     if request.method == 'POST':
@@ -33,7 +33,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')  # Redirect to a homepage or dashboard
+            return redirect('home')
         else:
             messages.error(request, 'Invalid username or password.')
     return render(request, 'login.html')
@@ -48,18 +48,35 @@ def logout_view(request):
 
 @login_required
 def question_view(request):
+    print("+++++++++++")
     if request.method == 'POST':
+        print("POSTED")
         name = request.POST.get('name')
         state = request.POST.get('state')
         adoption = request.POST.get('adoption')
-        adoption_money = request.POST.get('adoption_money', 'N/A')  # Default to 'N/A' if not provided
+        adoption_money = request.POST.get('adoption_money', 'N/A')
         csection = request.POST.get('csection')
+
+        name = str(name)  # Assuming name is a string
+        state = str(state)  # Assuming state is a string
+        adoption = str(adoption)  # Assuming adoption is a string
+        adoption_money = str(adoption_money)  # Assuming adoption_money is a string
+        csection = str(csection)
 
         if not all([name, state, adoption, csection]):
             messages.error(request, "All fields are required.")
             return render(request, "questions.html")
+        
+        print("--------------------------------")
+        print(request.user.username)
+        print(name)
+        print(state)
+        print(adoption)
+        print(adoption_money)
+        print(csection)
+        print("--------------------------------")
 
-        user = User(
+        user = Employee(
             username=request.user.username,
             name=name,
             state=state,
@@ -68,6 +85,7 @@ def question_view(request):
             csection=csection
         )
         user.save()
+        print("USEr AEFDS")
 
         return redirect('home')
 
