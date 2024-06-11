@@ -42,6 +42,9 @@ def login_view(request):
 def home_view(request):
     return render(request, 'home.html')
 
+def index_view(request):
+    return render(request, 'index.html')
+
 def logout_view(request):
     logout(request)
     return redirect('login')
