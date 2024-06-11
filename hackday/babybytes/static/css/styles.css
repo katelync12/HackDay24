@@ -12,15 +12,9 @@ body, h1, h2, h3, h4, h5, h6 {
 
  
 h1 {
-<<<<<<< Updated upstream
-    color: #585858;
-    font-size: 36 px;
-    font-family: 'inter';
-=======
     color: #318DC1;
     font-size: 40 px;
     font-family: 'Roboto';
->>>>>>> Stashed changes
 }
 .alert {
     position: fixed;
