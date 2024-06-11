@@ -48,9 +48,7 @@ def logout_view(request):
 
 @login_required
 def question_view(request):
-    print("+++++++++++")
     if request.method == 'POST':
-        print("POSTED")
         name = request.POST.get('name')
         state = request.POST.get('state')
         adoption = request.POST.get('adoption')
@@ -67,15 +65,6 @@ def question_view(request):
             messages.error(request, "All fields are required.")
             return render(request, "questions.html")
         
-        print("--------------------------------")
-        print(request.user.username)
-        print(name)
-        print(state)
-        print(adoption)
-        print(adoption_money)
-        print(csection)
-        print("--------------------------------")
-
         user = Employee(
             username=request.user.username,
             name=name,
@@ -85,7 +74,6 @@ def question_view(request):
             csection=csection
         )
         user.save()
-        print("USEr AEFDS")
 
         return redirect('home')
 
