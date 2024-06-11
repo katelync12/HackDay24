@@ -1,0 +1,19 @@
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+.signup-link {
+    margin-top: 10px;
+}
+.alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    display: none; /* Hide the alert initially */
+    z-index: 1000; /* Ensure the alert is on top */
+}

@@ -58,7 +58,6 @@ local_settings.py
 */migrations/*.py[cod]
 
 staticfiles/
-static/
 media/
 
 .ipynb_checkpoints
