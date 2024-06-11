@@ -19,13 +19,24 @@
   margin-top: 120px;
 }
 
+.container-title {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center text */
+    width: 30%;
+    height: 50%;
+    margin: 0 auto; /*Center container horizontally */
+}
+
 body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
 }
 
 
 h1 {
-    color: #585858;
+    color: #363636;
     font-size: 40 px;
     font-family: 'Roboto';
 }
@@ -43,9 +54,73 @@ h1 {
 }
 
 h2{
-    color: #585858;
+    color: #535353;
     font-size: 40 px;
     font-family: 'Roboto';
+}
+
+.primary-button {
+  background-color: #318DC1; /* Blue background */
+  border: none; /* Remove border */
+  color: white; /* White text */
+  padding: 15px 32px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block */
+  font-size: 16px; /* Font size */
+  font-weight: 600; /* Semi-bold font */
+  margin: 4px 2px; /* Margin */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 50px; /* Rounded corners */
+  font-family: 'Roboto', sans-serif; /* Use Google Font */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover State */
+.primary-button:hover {
+  background-color: #61C2F8; /* Lighter blue on hover */
+  border-color: none; /* Darker border color on hover */
+  opacity: 0.8; /* Slightly transparent */
+}
+
+.secondary-button {
+  background-color: white; /* White background */
+  border: 3px solid #318DC1; /* 3px border */
+  color: #318DC1; /* Blue text */
+  padding: 15px 32px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block */
+  font-size: 16px; /* Font size */
+  font-weight: 600; /* Semi-bold font */
+  margin: 4px 2px; /* Margin */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 50px; /* Rounded corners */
+  font-family: 'Roboto', sans-serif; /* Use Google Font */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover State */
+.secondary-button:hover {
+  background-color: #cae5f4; /* Lighter blue on hover */
+  border-color: none; /* Darker border color on hover */
+  opacity: 0.8; /* Slightly transparent */
+}
+
+.styled-input {
+  width: 70%;
+  padding: 10px;
+  margin: 10px;
+  border: 3px solid #D9D9D9;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif; /* Use Google Font */
+  transition: border-color 0.3s ease;
+}
+
+.styled-input:focus {
+  outline: 3px;
+  border-color: #318DC1; /* Change border color on focus */
 }
 
 @font-face {
@@ -69,7 +144,7 @@ p.bold {
 }
 
 p.body {
-    color: black;
+    color: #585858;
     font-size: 30px;
     font-family: 'Roboto';
 }
