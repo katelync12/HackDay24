@@ -1,13 +1,24 @@
 .container {
     text-align: center;
-    margin-top: 50px;
-    margin-left: 500px;
+    padding-top: 20px;
+    margin: 100px;
+    justify-content: center;
     height: 500px;
-    width: 500px;
-    background-color: white;
+    width: 700px;
+    background-color: #ffffff;
+    align-items: center;
+    border-radius: 10%;
+    
+  
+
+    
 }
 .signup-link {
     margin-top: 10px;
+}
+
+.shift {
+  margin-top: 120px;
 }
 
 body, h1, h2, h3, h4, h5, h6 {
@@ -33,15 +44,8 @@ h1 {
     z-index: 1000; /* Ensure the alert is on top */
 }
 
-.box{
-  background-color: #ECECEC;
-  width: 100px;
-  height: 100px;
-  margin: 50px;
-}
-
 h2{
-    color: #318DC1;
+    color: #585858;
     font-size: 40 px;
     font-family: 'Roboto';
 }
@@ -50,6 +54,7 @@ h2{
     font-family: 'Roboto';
     src: url('../../../../Inter-4.0.3/InterVariable.ttf')
 }
+
 
 
 
