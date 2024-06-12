@@ -46,7 +46,7 @@
     text-align: center; /* Center text */
     top: 50%;
     transform: translateY(50%); /* Center the container vertically */
-    width: 30%;
+    width: 40%;
     height: 50%;
     margin: 0 auto; /*Center container horizontally */
 }
