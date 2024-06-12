@@ -53,20 +53,11 @@
                 </ul>
             </div>
         </div>
-    </div>
-</div>
 
-<div class="big-div">
-    <div>   
-        <h2>Message Board</h2>
-            <div class="message-box">
-                {% for message in user_messages %}
-                    <div class="indiv-message">
-                        <p>{{ message.message }}</p>
-                        <p class="little-text">{{ message.sender }} - {{ message.role }}</p>
-                    </div>
-                {% endfor %}
-            </div>
+        <div class="toggle-dashboard" style="display: flex">
+            <p>Are you back from leave? <a href="{% url 'return' %}">Click here</a></p>
+
+        </div>
     </div>
 </div>
 

@@ -78,7 +78,11 @@ def account_view(request):
 
 @login_required
 def return_view(request):
-    return render(request, 'return.html')
+    employee = Employee.objects.get(username=request.user.username)
+    user_name = employee.name
+    user_messages = Messages.objects.filter(username=request.user.username)
+
+    return render(request, 'return.html', {'user_name': user_name, 'user_messages': user_messages})
 
 @login_required
 def home_view(request):

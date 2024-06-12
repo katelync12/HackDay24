@@ -1,21 +1,79 @@
+
+
+
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<div class="big-div">
+    <h1>Welcome to your dashboard{{ user_name }}!</h1>
+</div>
 
-<a href="home.html"><button>Return</button></a> 
-<form>
-        <input type="checkbox" id="Compliance Courses" name="Compliance Courses" value="Compliance Courses">
-        <label for="Compliance Courses">Compliance Courses</label> • <a href="https://www.statefarm.com/">View</a><br>
-        <input type="checkbox" id="Update your Heath Benefits" name="Update your Heath Benefits" value="Update your Heath Benefits">
-        <label for="Update your Heath Benefits">Update your Heath Benefits</label> • <a href="https://www.statefarm.com/">Contact</a>• <a href="https://www.statefarm.com/">View Site</a><br>
-        <input type="checkbox" id="Check in with your manager" name="Check in with your manager" value="Check in with your manager">
-        <label for="Check in with your manager">Check in with your manager</label> • <a href="https://www.statefarm.com/">Contact</a><br>
-        <input type="checkbox" id="Catch up on emails" name="Catch up on emails" value="Catch up on emails">
-        <label for="Catch up on emails">Catch up on emails</label> • <a href="https://www.statefarm.com/">Tutorial</a><br>
-        <input type="checkbox" id="Check team updates" name="Check team updates" value="Check team updates">
-        <label for="Check team updates">Check team updates</label> • <a href="message.html">Messsge Board</a><br>
-    </form>
+<div class="big-div" style="display: flex">
+
+    <div class="setup" style="width: 40%; height: 100%">
+        <h2>Reminders</h2>
+
+        <p style="font-size: .9em; color: #585858">Welcome back! We hope you had a relaxing time to bond with your child! Let's help you start easing back into the working life.</p>
+
+        <div>
+            <form>
+                <input type="checkbox" id="Compliance Courses" name="Compliance Courses" value="Compliance Courses">
+                <label for="Compliance Courses">Compliance Courses</label> • <a href="https://www.statefarm.com/">View</a><br>
+                <input type="checkbox" id="Update your Heath Benefits" name="Update your Heath Benefits" value="Update your Heath Benefits">
+                <label for="Update your Heath Benefits">Update your Heath Benefits</label> • <a href="https://www.statefarm.com/">Contact</a>• <a href="https://www.statefarm.com/">View Site</a><br>
+                <input type="checkbox" id="Check in with your manager" name="Check in with your manager" value="Check in with your manager">
+                <label for="Check in with your manager">Check in with your manager</label> • <a href="https://www.statefarm.com/">Contact</a><br>
+                <input type="checkbox" id="Catch up on emails" name="Catch up on emails" value="Catch up on emails">
+                <label for="Catch up on emails">Catch up on emails</label> • <a href="https://www.statefarm.com/">Tutorial</a><br>
+                <input type="checkbox" id="Check team updates" name="Check team updates" value="Check team updates">
+                <label for="Check team updates">Check team updates</label> • <a href="message.html">Messsge Board</a><br>
+            </form>
+        </div>
+    </div>
+
+    <div style="display: column; width: 60%">
+
+        <div class="quickupdates-upcomingevents" style="display: flex">
+            <div>
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="https://www.statefarm.com/">Parental Leave Policy</a></li>
+                    <li><a href="https://www.statefarm.com/">How to organize email inbox</a></li>
+                    <li><a href="https://www.statefarm.com/">HOPE Viva Engage</a></li>
+                    <li><a href="https://www.statefarm.com/">Mental Health Supporte</a></li>
+                </ul>
+            </div>
+
+            <div style="width: 60%">
+                <h2>Upcoming Events</h2>
+                <ul>
+                    <li>Communicating with Someone with Alzheimer’s, Dementia, or Other Memory Issues • <a href="https://www.statefarm.com/">RSVP</a></li>
+                    <li>Kickin’ it with your ERG Area Leads • <a href="https://www.statefarm.com/">RSVP</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="toggle-dashboard" style="display: flex">
+            <p>Want to view pre-leave checklist? <a href="{% url 'home' %}">Click here</a></p>
+
+        </div>
+    </div>
+</div>
+
+<div class="big-div">
+    <div>   
+        <h2>Message Board</h2>
+            <div class="message-box">
+                {% for message in user_messages %}
+                    <div class="indiv-message">
+                        <p>{{ message.message }}</p>
+                        <p class="little-text">{{ message.sender }} - {{ message.role }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+    </div>
+</div>
 
 {% endblock %}
