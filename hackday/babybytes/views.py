@@ -66,6 +66,10 @@ def account_view(request):
     return render(request, 'account.html')
 
 @login_required
+def return_view(request):
+    return render(request, 'return.html')
+
+@login_required
 def home_view(request):
     user_messages = Messages.objects.filter(username=request.user.username)
     return render(request, 'home.html', {'user_messages': user_messages})

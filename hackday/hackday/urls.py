@@ -14,4 +14,5 @@ urlpatterns = [
     path('account/', views.account_view, name='account'),
     path('message/', views.message_view, name='message'),
     path('success_page/', views.success_page_view, name='success_page'),
+    path('return/', views.return_view, name='return'),
 ]
