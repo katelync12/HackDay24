@@ -14,7 +14,7 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <label class="logo"> <img src="../static/img/WordedLogo.svg" alt="LeaveLounge" width="300" height="150"></label>
+        <label class="logo"> <img src="../static/img/logo.png" alt="LeaveLounge" style="width: 35%; height: auto; margin-top: 10px;"></label>
         <ul>
             {% if user.is_authenticated %}
                 <li><a class="{% if request.path == '/home/' %}active{% endif %}" href="/home">Home</a></li>
