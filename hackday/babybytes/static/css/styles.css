@@ -439,6 +439,24 @@ textarea.messagebox {
     right: 30%;
 }
 
+.paragraph{
+  text-align: center; /* Center align the text */
+  margin-top: 75px;
+  margin:auto;
+  font-size: 25px;
+}
+
+.para2{
+  margin:aut0;
+  font-size:20px;
+}
+
+.bluehead{
+  font-size: 40px;
+  color:#318DC1;
+}
+
+
 .account_subtext {
     color: #515151;
 }
@@ -454,4 +472,20 @@ textarea.messagebox {
     margin-right: 10px;
     background-color: #E8F7FF;
     border: 3px solid #318DC1;
+}
+.paragraph{
+  text-align: center; /* Center align the text */
+  margin-top: 75px;
+  margin:auto;
+  font-size: 25px;
+}
+
+.para2{
+  margin:aut0;
+  font-size:20px;
+}
+
+.bluehead{
+  font-size: 40px;
+  color:#318DC1;
 }
