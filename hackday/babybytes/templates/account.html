@@ -5,7 +5,7 @@
 {% block content %}
     <div style="margin-left: 30%; margin-right: 30%; display: grid;">
         <h1 style="margin-bottom: 0px;">Account Page</h1>
-        <h3>Manage your account settings</h3>
+        <h3 class="account_subtext">Manage your account settings</h3>
 
         <form method="post" action="{% url 'account' %}">
             {% csrf_token %}

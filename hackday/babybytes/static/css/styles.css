@@ -1,3 +1,23 @@
+.setup {
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  justify-content: center;
+  border-radius: 25px;
+  border: 3px solid #D9D9D9;
+  padding: 25px;
+}
+
+.quickupdates-upcomingevents {
+  margin: 0 auto;
+  width: 80%;
+  height: 60%;
+  justify-content: center;
+  border-radius: 25px;
+  border: 3px solid #D9D9D9;
+  padding: 25px;
+}
+
 .container-fullpage {
   padding-top: 20px;
   margin: 0 auto;
@@ -46,7 +66,7 @@
     text-align: center; /* Center text */
     top: 50%;
     transform: translateY(50%); /* Center the container vertically */
-    width: 30%;
+    width: 40%;
     height: 50%;
     margin: 0 auto; /*Center container horizontally */
 }
@@ -131,6 +151,10 @@ h2{
     font-family: 'Roboto';
 }
 
+link {
+  color:#318DC1
+}
+
 .primary-button {
   background-color: #318DC1; /* Blue background */
   border: none; /* Remove border */
@@ -194,7 +218,7 @@ h2{
 .styled-input-messages {
   width: 70%;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 10px 10px 0;
   border: 3px solid #D9D9D9;
   border-radius: 10px;
   color:#585858;
@@ -413,4 +437,21 @@ textarea.messagebox {
 .edit-button {
     position: absolute;
     right: 30%;
+}
+
+.account_subtext {
+    color: #515151;
+}
+
+.big-div {
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.message-box {
+    display: flex;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #E8F7FF;
+    border: 3px solid #318DC1;
 }
