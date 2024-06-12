@@ -3,24 +3,26 @@
 {% block title %}Messages{% endblock %}
 
 {% block content %}
-    <div style="justify-content: center; align-items: center">
-        <div>
+    <div class="container-fullpage">
+        <div style: "text-align: center">
             <h1>Leave a message for a parent</h1>
         </div>
         <form method="post">
             {% csrf_token %}
-            <div style="justify-content: center; align-items: center">
-                <p>Username (State Farm alias)</p>
-                <input class="messagebox" type="text" name="username" style="width: 35%" required>
+            <div>
+                <label>Username (State Farm alias)</label>
+                <br>
+                <input class="styled-input-messages" type="text" name="username" placeholder="Username" style="width: 35%" required>
                 
-                <div style="display: flex; flex-direction: row; justify-content: center;">
+                <div class="input-wrapper">
                     <div style="margin-right: 10px; width: 17.5%">
-                        <p class="messagedesc">Name</p>
-                        <input class="messagebox" type="text" name="sender" style="width: 100%" required>
+                        <label for="username">Name</label>
+                        <input class="styled-input-messages" type="text" name="sender" placeholder="Your Name" style="width: 100%" required>
                     </div>
-                    <div style="margin-right: 10px; width: 17.5%">
-                        <p class="messagedesc">Role</p>
-                        <select id="dropdown" name="role" required style="width: 175px;" class="messagebox">
+                    <div style="margin-right: 50%">
+                        <label>Role</label>
+                        <br>
+                        <select id="dropdown" name="role" required style="width: 100%" class="styled-input-messages">
                             <option value="" disabled selected>Select Role</option>
                             <option value="Manager">Manager</option>
                             <option value="Coworker">Co-Worker</option>
@@ -31,14 +33,15 @@
                 </div>
                 
                 <div>
-                    <p>Message</p>
-                    <textarea class="messagebox" name="message" rows="6" required></textarea>
+                    <label>Message</label>
+                    <br>
+                    <textarea class="styled-input-messages" name="message" rows="6" placeholder="Write your message here" required></textarea>
                 </div>
             </div>
             <br>
             <div style="display: flex; justify-content: center;">
-                <button onclick="location.href='/'">Back</button>
-                <button type="submit">Submit</button>
+                <button class=secondary-button onclick="location.href='/'">Back</button>
+                <button class=primary-button type="submit">Submit</button>
             </div>
         </form>
         
