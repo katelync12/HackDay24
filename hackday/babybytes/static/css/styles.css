@@ -58,13 +58,30 @@
   align-items: center;
   text-align: center; /* Center text */
   top: 50%;
-  transform: translateY(20%); /* Center the container vertically */
+  transform: translateY(25%); /* Center the container vertically */
   width: 30%;
   height: 80%;
   margin: 0 auto; /*Center container horizontally */
   border-radius: 25px;
-  background-color: #ffff
+  background-color: #ffff;
+  padding: 20px;
 }
+
+.container-signup {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center text */
+    top: 50%;
+    transform: translateY(10%); /* Center the container vertically */
+    width: 30%;
+    height: 80%;
+    margin: 0 auto; /*Center container horizontally */
+    border-radius: 25px;
+    background-color: #ffff;
+    padding: 20px;
+  }
 
 .container-messages {
   display: flex;
