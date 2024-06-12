@@ -3,58 +3,68 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <div>
-        <h1>Welcome to your dashboard, {{ user_name }}!</h1>
-    <div>
+<div class="big-div">
+    <h1>Welcome to your dashboard, {{ user_name }}!</h1>
+</div>
 
-    <div class="container-list">
-    <h2>Set up your leave</h2>
-    <div>
-    <body>
+<div class="big-div" style="display: flex">
+
+    <div style="width: 40%">
+        <h2>Set up your leave</h2>
+
+        <div>
         <a href="return.html"><button>Pre Leave</button></a> 
         <form>
-                <input type="checkbox" id="View the Parental Leave Policy" name="View the Parental Leave Policy" value="View the Parental Leave Policy">
-                <label for="View the Parental Leave Policy">View the Parental Leave Policy</label> • <a href="https://www.statefarm.com/">View</a><br>
-                <input type="checkbox" id="Open a claim" name="Open a claim" value="Open a claim">
-                <label for="Open a claim">Open a claim</label> • <a href="https://www.statefarm.com/">Contact</a><br>
+            <input type="checkbox" id="View the Parental Leave Policy" name="View the Parental Leave Policy" value="View the Parental Leave Policy">
+            <label for="View the Parental Leave Policy">View the Parental Leave Policy</label> • <a href="https://www.statefarm.com/">View</a><br>
+            <input type="checkbox" id="Open a claim" name="Open a claim" value="Open a claim">
+            <label for="Open a claim">Open a claim</label> • <a href="https://www.statefarm.com/">Contact</a><br>
 
-                <input type="checkbox" id="Call in and update them with the birth date" name="Call in and update them with the birth date" value="Call in and update them with the birth date">
-                <label for="Call in and update them with the birth date">Call in and update them with the birth date</label> • <a href="https://www.statefarm.com/">Contact</a><br>
-                <input type="checkbox" id="Call the State Farm Benefits Center after the baby is born" name="Call the State Farm Benefits Center after the baby is born" value="Call the State Farm Benefits Center after the baby is born">
-                <label for="Call the State Farm Benefits Center after the baby is born">Call the State Farm Benefits Center after the baby is borns</label> • <a href="https://www.statefarm.com/">Tutorial</a><br>
-                <input type="checkbox" id="Check team updates" name="Check team updates" value="Check team updates">
-                <label for="Check team updates">Check team updates</label> • <a href="message.html">Messsge Board</a><br>
-            </form>
+            <input type="checkbox" id="Call in and update them with the birth date" name="Call in and update them with the birth date" value="Call in and update them with the birth date">
+            <label for="Call in and update them with the birth date">Call in and update them with the birth date</label> • <a href="https://www.statefarm.com/">Contact</a><br>
+            <input type="checkbox" id="Call the State Farm Benefits Center after the baby is born" name="Call the State Farm Benefits Center after the baby is born" value="Call the State Farm Benefits Center after the baby is born">
+            <label for="Call the State Farm Benefits Center after the baby is born">Call the State Farm Benefits Center after the baby is borns</label> • <a href="https://www.statefarm.com/">Tutorial</a><br>
+            <input type="checkbox" id="Check team updates" name="Check team updates" value="Check team updates">
+            <label for="Check team updates">Check team updates</label> • <a href="message.html">Messsge Board</a><br>
+        </form>
         </div>
     </div>
-    </body>
-    <div class="container-links">
-    <h2>Quick Links</h2>
-    <body>
-        <ul>
-            <li><a href="https://www.statefarm.com/">Parental Leave Policy</a></li>
-            <li><a href="https://www.statefarm.com/">How to organize email inbox</a></li>
-            <li><a href="https://www.statefarm.com/">HOPE Viva Engage</a></li>
-            <li><a href="https://www.statefarm.com/">Mental Health Supporte</a></li>
-          </ul>
+
+    <div style="display: column; width: 60%">
+
+        <div class="container-links" style="display: flex">
+            <div style="width: 40%">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="https://www.statefarm.com/">Parental Leave Policy</a></li>
+                    <li><a href="https://www.statefarm.com/">How to organize email inbox</a></li>
+                    <li><a href="https://www.statefarm.com/">HOPE Viva Engage</a></li>
+                    <li><a href="https://www.statefarm.com/">Mental Health Supporte</a></li>
+                </ul>
+            </div>
+
+            <div style="width: 60%">
+                <h2>Upcoming Events</h2>
+                <ul>
+                    <li>Communicating with Someone with Alzheimer’s, Dementia, or Other Memory Issues • <a href="https://www.statefarm.com/">RSVP</a></li>
+                    <li>Kickin’ it with your ERG Area Leads • <a href="https://www.statefarm.com/">RSVP</a></li>
+                </ul>
+            </div>
         </div>
-    </body>
-    <h2>Upcoming Events</h2>
-    <ul>
-        <li>Communicating with Someone with Alzheimer’s, Dementia, or Other Memory Issues • <a href="https://www.statefarm.com/">RSVP</a></li>
-        <li>Kickin’ it with your ERG Area Leads • <a href="https://www.statefarm.com/">RSVP</a></li>
-      </ul>
 
-    <h2>Message Board</h2>
-    <ul>
-        {% for message in user_messages %}
-            <li>
-                <strong>From: {{ message.sender }}</strong><br>
-                <strong>Role: {{ message.role }}</strong><br>
-                <p>{{ message.message }}</p>
-            </li>
-        {% endfor %}
-    </ul>
-
+        <div>
+        <h2>Message Board</h2>
+            <ul>
+                {% for message in user_messages %}
+                    <li>
+                        <strong>From: {{ message.sender }}</strong><br>
+                        <strong>Role: {{ message.role }}</strong><br>
+                        <p>{{ message.message }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

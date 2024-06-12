@@ -418,3 +418,8 @@ textarea.messagebox {
 .account_subtext {
     color: #515151;
 }
+
+.big-div {
+    margin-right: 5%;
+    margin-left: 5%;
+}
