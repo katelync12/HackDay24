@@ -10,7 +10,7 @@ class Employee(models.Model):
     csection = models.CharField(max_length=255)
 
 class Messages(models.Model):
-    username = models.CharField(max_length=255, primary_key=True)
+    username = models.CharField(max_length=255)
     role = models.CharField(max_length=255)
     sender = models.CharField(max_length=255)
     message = models.TextField()
