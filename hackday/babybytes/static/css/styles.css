@@ -11,6 +11,13 @@
     
     
 }
+
+.image-container {
+  width: 200px; /* Desired width */
+  height: 200px; /* Desired height */
+  overflow: hidden; /* Hide overflow content */
+}
+
 .signup-link {
     margin-top: 10px;
 }
