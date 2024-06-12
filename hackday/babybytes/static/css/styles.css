@@ -470,8 +470,42 @@ textarea.messagebox {
     display: flex;
     border-radius: 10px;
     margin-right: 10px;
-    background-color: #E8F7FF;
     border: 3px solid #318DC1;
+    justify-content: center;
+}
+
+.indiv-message {
+    width: 25%;
+    margin: 15px;
+    background-color: #E8F7FF;
+    padding: 10px 10px 15px 10px;
+    border-radius: 10px;
+}
+
+.bottom-message {
+    position: absolute;
+    bottom: 0;
+}
+
+.little-text {
+    font-size: .9em;
+    color: #393939;
+}
+.paragraph{
+  text-align: center; /* Center align the text */
+  margin-top: 75px;
+  margin:auto;
+  font-size: 25px;
+}
+
+.para2{
+  margin:aut0;
+  font-size:20px;
+}
+
+.bluehead{
+  font-size: 40px;
+  color:#318DC1;
 }
 .paragraph{
   text-align: center; /* Center align the text */

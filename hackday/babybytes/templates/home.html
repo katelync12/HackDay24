@@ -51,13 +51,13 @@
             </div>
         </div>
 
-        <div>
+        <div>   
         <h2>Message Board</h2>
             <div class="message-box">
                 {% for message in user_messages %}
-                    <div style="width: 25%">
+                    <div class="indiv-message">
                         <p>{{ message.message }}</p>
-                        <p>{{ message.sender }} - {{ message.role }}</p>
+                        <p class="little-text">{{ message.sender }} - {{ message.role }}</p>
                     </div>
                 {% endfor %}
             </div>
