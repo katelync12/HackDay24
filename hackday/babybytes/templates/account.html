@@ -1,7 +1,99 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Account{% endblock %}
 
 {% block content %}
     <h1>Account Page</h1>
+
+    <form method="post" action="{% url 'account' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td>{{ employee.username }}</td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <span id="name-display">{{ employee.name }}</span>
+                    <input type="text" id="name-edit" name="name" value="{{ employee.name }}" style="display:none;">
+                    <a href="#" onclick="toggleEdit('name')">Edit</a>
+                </td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>
+                    <span id="state-display">{{ employee.state }}</span>
+                    <select id="state-edit" name="state" style="display:none;">
+                        <option value="California" {% if employee.state == "California" %}selected{% endif %}>California</option>
+                        <option value="Minnesota" {% if employee.state == "Minnesota" %}selected{% endif %}>Minnesota</option>
+                        <option value="Other" {% if employee.state == "Other" %}selected{% endif %}>Other</option>
+                    </select>
+                    <a href="#" onclick="toggleEdit('state')">Edit</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Adoption:</td>
+                <td>
+                    <span id="adoption-display">{{ employee.adoption }}</span>
+                    <select id="adoption-edit" name="adoption" style="display:none;" onchange="checkAdoption()">
+                        <option value="Yes" {% if employee.adoption == "Yes" %}selected{% endif %}>Yes</option>
+                        <option value="No" {% if employee.adoption == "No" %}selected{% endif %}>No</option>
+                    </select>
+                    <a href="#" onclick="toggleEdit('adoption')">Edit</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Reimbursement:</td>
+                <td>
+                    <span id="reimbursement-display">{{ employee.reimbursement }}</span>
+                    <select id="reimbursement-edit" name="reimbursement" style="display:none;">
+                        <option value="Yes" {% if employee.reimbursement == "Yes" %}selected{% endif %}>Yes</option>
+                        <option value="No" {% if employee.reimbursement == "No" %}selected{% endif %}>No</option>
+                        <option value="N/A" {% if employee.reimbursement == "N/A" %}selected{% endif %}>N/A</option>
+                    </select>
+                    <a href="#" id="reimbursement-edit-link" onclick="toggleEdit('reimbursement')">Edit</a>
+                </td>
+            </tr>
+            <tr>
+                <td>C-Section:</td>
+                <td>
+                    <span id="csection-display">{{ employee.csection }}</span>
+                    <select id="csection-edit" name="csection" style="display:none;">
+                        <option value="Yes" {% if employee.csection == "Yes" %}selected{% endif %}>Yes</option>
+                        <option value="No" {% if employee.csection == "No" %}selected{% endif %}>No</option>
+                    </select>
+                    <a href="#" onclick="toggleEdit('csection')">Edit</a>
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <script>
+        function toggleEdit(field) {
+            const display = document.getElementById(field + '-display');
+            const edit = document.getElementById(field + '-edit');
+            if (display.style.display === 'none') {
+                display.style.display = 'inline';
+                edit.style.display = 'none';
+            } else {
+                display.style.display = 'none';
+                edit.style.display = 'inline';
+            }
+        }
+
+        function checkAdoption() {
+            const adoptionField = document.getElementById('adoption-edit');
+            const reimbursementEditLink = document.getElementById('reimbursement-edit-link');
+            if (adoptionField.value === 'No') {
+                reimbursementEditLink.style.display = 'none';
+            } else {
+                reimbursementEditLink.style.display = 'inline';
+            }
+        }
+
+        // Initial check on page load
+        window.onload = checkAdoption;
+    </script>
 {% endblock %}

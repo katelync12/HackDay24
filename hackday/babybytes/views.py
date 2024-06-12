@@ -63,7 +63,18 @@ def message_view(request):
 
 @login_required
 def account_view(request):
-    return render(request, 'account.html')
+    employee = Employee.objects.get(username=request.user.username)
+    
+    if request.method == 'POST':
+        employee.name = request.POST.get('name', employee.name)
+        employee.state = request.POST.get('state', employee.state)
+        employee.adoption = request.POST.get('adoption', employee.adoption)
+        employee.reimbursement = request.POST.get('reimbursement', employee.reimbursement)
+        employee.csection = request.POST.get('csection', employee.csection)
+        employee.save()
+        return redirect('account')  # Redirect to the same page to reflect the changes
+
+    return render(request, 'account.html', {'employee': employee})
 
 @login_required
 def return_view(request):
