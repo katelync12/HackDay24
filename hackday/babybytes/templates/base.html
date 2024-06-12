@@ -14,7 +14,7 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <label class="logo">GFG</label>
+        <label class="logo">Leave Lounge</label>
         <ul>
             {% if user.is_authenticated %}
                 <li><a class="{% if request.path == '/home/' %}active{% endif %}" href="/home">Home</a></li>
