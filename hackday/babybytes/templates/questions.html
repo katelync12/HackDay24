@@ -6,23 +6,23 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-
+<div class="container-fullpage">
 <form id="questionnaireForm" method="POST" action="{% block action %}{% url 'questions' %}{% endblock %}" onsubmit="return submitForm()">
     {% csrf_token %}
     <h2>Questionnaire</h2>
     <label for="textbox">What is your name?</label><br>
-    <input type="text" id="textbox" name="name" required><br><br>
+    <input input class="styled-input-messages" placeholder="Name" type="text" id="textbox" name="name" required><br><br>
 
     <label for="dropdown">What state are you based in?</label><br>
-    <select id="dropdown" name="state" required>
+    <select id="dropdown" name="state" class="styled-input-messages" required>
         <option value="" disabled selected>Select state</option>
         <option value="California">California</option>
         <option value="Minnesota">Minnesota</option>
         <option value="Other">Other</option>
     </select><br><br>
 
-    <label for="adoption_dropdown">Are you adopting?</label><br>
-    <select id="adoption_dropdown" name="adoption" required onchange="toggleAdoptionMoney()">
+    <label input for="adoption_dropdown">Are you adopting?</label><br>
+    <select id="adoption_dropdown" name="adoption" class="styled-input-messages" required onchange="toggleAdoptionMoney()">
         <option value="" disabled selected>Select option</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>
@@ -30,7 +30,7 @@
 
     <div id="adoption_money_div" style="display: none;">
         <label for="adoption_money_dropdown">Would you like financial reimbursement for the adoption?</label><br>
-        <select id="adoption_money_dropdown" name="adoption_money">
+        <select id="adoption_money_dropdown" name="adoption_money" class="styled-input-messages">
             <option value="" disabled selected>Select option</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
@@ -38,14 +38,15 @@
     </div>
 
     <label for="csection_dropdown">Are you planning on having a c-section?</label><br>
-    <select id="csection_dropdown" name="csection" required>
+    <select id="csection_dropdown" name="csection" class="styled-input-messages" required>
         <option value="" disabled selected>Select option</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>
     </select><br><br>
 
-    <button type="submit">Submit</button>
+    <button class="primary-button" type="submit">Submit</button>
 </form>
+</div>
 
 <script>
     function submitForm() {
