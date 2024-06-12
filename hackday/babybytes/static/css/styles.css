@@ -1,7 +1,7 @@
 .setup {
   margin: 0 auto;
   width: 50%;
-  height: 50%;
+  height: 180px;
   justify-content: center;
   border-radius: 25px;
   border: 3px solid #D9D9D9;
@@ -11,7 +11,7 @@
 .quickupdates-upcomingevents {
   margin: 0 auto;
   width: 80%;
-  height: 60%;
+  height: 180px;
   justify-content: center;
   border-radius: 25px;
   border: 3px solid #D9D9D9;
@@ -357,6 +357,16 @@ label {
   #check {
     display: none;
   }
+
+  .checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
 
   .nav-bar ul li a.active {
     color: #318DC1;
