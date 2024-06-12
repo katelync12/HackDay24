@@ -3,72 +3,77 @@
 {% block title %}Account{% endblock %}
 
 {% block content %}
-    <h1>Account Page</h1>
+    <div style="margin-left: 30%; margin-right: 30%; display: grid;">
+        <h1 style="margin-bottom: 0px;">Account Page</h1>
+        <h3>Manage your account settings</h3>
 
-    <form method="post" action="{% url 'account' %}">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username:</td>
-                <td>{{ employee.username }}</td>
-            </tr>
-            <tr>
-                <td>Name:</td>
-                <td>
+        <form method="post" action="{% url 'account' %}">
+            {% csrf_token %}
+            <div>
+                <p class="accounttext">Username</p>
+                <div class="accountinfo">
+                    {{ employee.username }}
+                </div>
+            </div>
+            <div>
+                <p class="accounttext">Name</p>
+                <div class="accountinfo">
                     <span id="name-display">{{ employee.name }}</span>
                     <input type="text" id="name-edit" name="name" value="{{ employee.name }}" style="display:none;">
-                    <a href="#" onclick="toggleEdit('name')">Edit</a>
-                </td>
-            </tr>
-            <tr>
-                <td>State:</td>
-                <td>
+                    <a href="#" class="edit-button" onclick="toggleEdit('name')">Edit</a>
+                </div>
+            </div>
+            <div>
+                <p class="accounttext">State</p>
+                <div class="accountinfo">
                     <span id="state-display">{{ employee.state }}</span>
                     <select id="state-edit" name="state" style="display:none;">
                         <option value="California" {% if employee.state == "California" %}selected{% endif %}>California</option>
                         <option value="Minnesota" {% if employee.state == "Minnesota" %}selected{% endif %}>Minnesota</option>
                         <option value="Other" {% if employee.state == "Other" %}selected{% endif %}>Other</option>
                     </select>
-                    <a href="#" onclick="toggleEdit('state')">Edit</a>
-                </td>
-            </tr>
-            <tr>
-                <td>Adoption:</td>
-                <td>
+                    <a href="#" class="edit-button" onclick="toggleEdit('state')">Edit</a>
+                </div>
+            </div>
+            <div>
+                <p class="accounttext">Adoption</p>
+                <div class="accountinfo">
                     <span id="adoption-display">{{ employee.adoption }}</span>
                     <select id="adoption-edit" name="adoption" style="display:none;" onchange="checkAdoption()">
                         <option value="Yes" {% if employee.adoption == "Yes" %}selected{% endif %}>Yes</option>
                         <option value="No" {% if employee.adoption == "No" %}selected{% endif %}>No</option>
                     </select>
-                    <a href="#" onclick="toggleEdit('adoption')">Edit</a>
-                </td>
-            </tr>
-            <tr>
-                <td>Reimbursement:</td>
-                <td>
+                    <a href="#" class="edit-button" onclick="toggleEdit('adoption')">Edit</a>
+                </div>
+            </div>
+            <div>
+                <p class="accounttext">Reimbursement</p>
+                <div class="accountinfo">
                     <span id="reimbursement-display">{{ employee.reimbursement }}</span>
                     <select id="reimbursement-edit" name="reimbursement" style="display:none;">
                         <option value="Yes" {% if employee.reimbursement == "Yes" %}selected{% endif %}>Yes</option>
                         <option value="No" {% if employee.reimbursement == "No" %}selected{% endif %}>No</option>
                         <option value="N/A" {% if employee.reimbursement == "N/A" %}selected{% endif %}>N/A</option>
                     </select>
-                    <a href="#" id="reimbursement-edit-link" onclick="toggleEdit('reimbursement')">Edit</a>
-                </td>
-            </tr>
-            <tr>
-                <td>C-Section:</td>
-                <td>
+                    <a href="#" class="edit-button" id="reimbursement-edit-link" onclick="toggleEdit('reimbursement')">Edit</a>
+                </div>
+            </div>
+            <div>
+                <p class="accounttext">C-section</p>
+                <div class="accountinfo">
                     <span id="csection-display">{{ employee.csection }}</span>
                     <select id="csection-edit" name="csection" style="display:none;">
                         <option value="Yes" {% if employee.csection == "Yes" %}selected{% endif %}>Yes</option>
                         <option value="No" {% if employee.csection == "No" %}selected{% endif %}>No</option>
                     </select>
-                    <a href="#" onclick="toggleEdit('csection')">Edit</a>
-                </td>
-            </tr>
-        </table>
-        <button type="submit">Save Changes</button>
-    </form>
+                    <a href="#" class="edit-button" onclick="toggleEdit('csection')">Edit</a>
+                </div>
+            </div>
+
+            <br>
+            <button class="primary-button" style="margin-bottom: 50px;" type="submit">Save Changes</button>
+        </form>
+    </div>
 
     <script>
         function toggleEdit(field) {
