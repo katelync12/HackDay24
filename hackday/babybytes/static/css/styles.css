@@ -423,3 +423,11 @@ textarea.messagebox {
     margin-right: 5%;
     margin-left: 5%;
 }
+
+.message-box {
+    display: flex;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #E8F7FF;
+    border: 3px solid #318DC1;
+}

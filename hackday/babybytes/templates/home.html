@@ -54,15 +54,14 @@
 
         <div>
         <h2>Message Board</h2>
-            <ul>
+            <div class="message-box">
                 {% for message in user_messages %}
-                    <li>
-                        <strong>From: {{ message.sender }}</strong><br>
-                        <strong>Role: {{ message.role }}</strong><br>
+                    <div style="width: 25%">
                         <p>{{ message.message }}</p>
-                    </li>
+                        <p>{{ message.sender }} - {{ message.role }}</p>
+                    </div>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     </div>
 </div>
