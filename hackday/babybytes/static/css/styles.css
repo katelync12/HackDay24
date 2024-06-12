@@ -414,3 +414,7 @@ textarea.messagebox {
     position: absolute;
     right: 30%;
 }
+
+.account_subtext {
+    color: #515151;
+}
